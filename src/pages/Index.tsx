@@ -65,27 +65,84 @@ const Index = () => {
     };
   }, []);
 
+  // Add animated background shapes on hover
+  useEffect(() => {
+    const createRandomShapes = () => {
+      const colors = ['bg-coral/10', 'bg-sand/20', 'bg-navy/10', 'bg-cream/50'];
+      const shapes = ['rounded-full', 'rounded-md', 'rounded-lg'];
+      
+      document.querySelectorAll('section').forEach(section => {
+        section.addEventListener('mouseenter', () => {
+          const shapeCount = Math.floor(Math.random() * 2) + 2; // 2-3 shapes
+          
+          for (let i = 0; i < shapeCount; i++) {
+            const shape = document.createElement('div');
+            const size = Math.floor(Math.random() * 100) + 100; // 100-200px
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const shapeClass = shapes[Math.floor(Math.random() * shapes.length)];
+            
+            // Position and style
+            shape.className = `absolute pointer-events-none ${color} ${shapeClass} animate-float-reverse blur-md`;
+            shape.style.width = `${size}px`;
+            shape.style.height = `${size}px`;
+            shape.style.left = `${Math.random() * 80}%`;
+            shape.style.top = `${Math.random() * 80}%`;
+            shape.style.animationDelay = `${Math.random() * 2}s`;
+            shape.style.animationDuration = `${Math.random() * 4 + 6}s`;
+            shape.style.opacity = '0.3';
+            shape.style.zIndex = '-1';
+            
+            // Add and remove after animation
+            section.appendChild(shape);
+            
+            setTimeout(() => {
+              shape.remove();
+            }, 8000);
+          }
+        });
+      });
+    };
+    
+    createRandomShapes();
+    
+    return () => {
+      // Cleanup if needed
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-cream">
       <Navigation />
       
       {/* Hero Section */}
       <Hero />
       
       {/* Projects Section */}
-      <Projects />
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-lines opacity-20"></div>
+        <Projects />
+      </div>
       
       {/* Skills Section */}
-      <Skills />
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dots opacity-20"></div>
+        <Skills />
+      </div>
       
       {/* Experience Section */}
       <Experience />
       
       {/* Education Section */}
-      <Education />
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-lines opacity-20"></div>
+        <Education />
+      </div>
       
       {/* Certifications Section */}
-      <Certifications />
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-dots opacity-10"></div>
+        <Certifications />
+      </div>
       
       {/* Contact Section */}
       <Contact />

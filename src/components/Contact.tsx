@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-4 bg-background">
+    <section id="contact" className="py-24 px-4 bg-cream">
       <div 
         ref={ref as React.RefObject<HTMLDivElement>}
         className={cn(
@@ -54,7 +54,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-border">
+          <div className="bg-white p-8 rounded-lg shadow-sm border border-sand">
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-dark mb-1">
@@ -66,7 +66,7 @@ const Contact = () => {
                     id="name" 
                     name="name"
                     placeholder="Your name" 
-                    className="pl-10" 
+                    className="pl-10 border-sand focus:border-coral focus:ring-coral" 
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -85,7 +85,7 @@ const Contact = () => {
                     name="email"
                     type="email" 
                     placeholder="Your email" 
-                    className="pl-10" 
+                    className="pl-10 border-sand focus:border-coral focus:ring-coral" 
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -101,7 +101,7 @@ const Contact = () => {
                   id="message" 
                   name="message"
                   placeholder="Your message" 
-                  className="min-h-[120px]" 
+                  className="min-h-[120px] border-sand focus:border-coral focus:ring-coral" 
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -110,7 +110,7 @@ const Contact = () => {
               
               <Button 
                 type="submit" 
-                className="w-full bg-dark text-white hover:bg-dark/90"
+                className="w-full bg-coral text-white hover:bg-coral/90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -135,9 +135,9 @@ const Contact = () => {
             </div>
             
             <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center bg-white w-12 h-12 rounded-full shadow-sm">
-                  <Mail className="h-5 w-5 text-accent" />
+              <div className="flex items-center space-x-4 hover-lift">
+                <div className="flex items-center justify-center bg-white w-12 h-12 rounded-full shadow-sm border border-sand">
+                  <Mail className="h-5 w-5 text-coral" />
                 </div>
                 <div>
                   <p className="text-sm text-neutral">Email</p>
@@ -145,9 +145,9 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center bg-white w-12 h-12 rounded-full shadow-sm">
-                  <Phone className="h-5 w-5 text-accent" />
+              <div className="flex items-center space-x-4 hover-lift">
+                <div className="flex items-center justify-center bg-white w-12 h-12 rounded-full shadow-sm border border-sand">
+                  <Phone className="h-5 w-5 text-coral" />
                 </div>
                 <div>
                   <p className="text-sm text-neutral">Phone</p>
@@ -155,9 +155,9 @@ const Contact = () => {
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center bg-white w-12 h-12 rounded-full shadow-sm">
-                  <MapPin className="h-5 w-5 text-accent" />
+              <div className="flex items-center space-x-4 hover-lift">
+                <div className="flex items-center justify-center bg-white w-12 h-12 rounded-full shadow-sm border border-sand">
+                  <MapPin className="h-5 w-5 text-coral" />
                 </div>
                 <div>
                   <p className="text-sm text-neutral">Location</p>

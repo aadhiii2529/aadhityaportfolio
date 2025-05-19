@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -23,11 +22,16 @@ export default {
 				sans: ['Inter', 'sans-serif'],
 			},
 			colors: {
+				coral: "#F06173",      // Top coral/red color
+				cream: "#FFF5E1",      // Light cream color
+				sand: "#D8C3B2",       // Sand/beige color
+				navy: "#4B6697",       // Navy blue color
+				
 				dark: "#1A1F2C",
 				light: "#FFFFFF",
-				accent: "#D6BCFA",
+				accent: "#F06173",     // Updated to coral
 				neutral: "#8E9196",
-				background: "#F1F0FB",
+				background: "#FFF5E1", // Updated to cream
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
