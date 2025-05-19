@@ -20,7 +20,10 @@ const Navigation = () => {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Projects", href: "#projects" },
-    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
+    { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -35,7 +38,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#home" className="text-lg font-semibold text-dark">
-          portfolio<span className="text-accent">.</span>
+          aadhitya<span className="text-accent">.</span>
         </a>
 
         {/* Desktop Navigation */}

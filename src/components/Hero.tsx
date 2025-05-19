@@ -3,7 +3,7 @@ import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
   const { ref: headingRef, isVisible: headingVisible } = useScrollAnimation();
@@ -33,17 +33,7 @@ const Hero = () => {
                   headingVisible ? "animate-text-reveal" : "opacity-0"
                 )}
               >
-                Creating
-              </span>
-            </span>
-            <span className="relative overflow-hidden inline-block mr-2">
-              <span
-                className={cn(
-                  "inline-block reveal-delay-1",
-                  headingVisible ? "animate-text-reveal" : "opacity-0"
-                )}
-              >
-                digital
+                Hey, I'm
               </span>
             </span>
             <span className="relative overflow-hidden inline-block">
@@ -53,7 +43,7 @@ const Hero = () => {
                   headingVisible ? "animate-text-reveal" : "opacity-0"
                 )}
               >
-                experiences
+                Aadhitya
               </span>
             </span>
           </h1>
@@ -66,7 +56,7 @@ const Hero = () => {
               subtitleVisible ? "animate-fade-in reveal-delay-3" : "opacity-0"
             )}
           >
-            I design and develop websites and applications that deliver exceptional user experiences with clean aesthetics and intuitive functionality.
+            Electronics and Communication Engineer passionate about IoT, AI, and project management. Turning innovative ideas into impactful solutions.
           </p>
 
           {/* CTA */}
@@ -77,13 +67,28 @@ const Hero = () => {
               ctaVisible ? "animate-fade-in reveal-delay-4" : "opacity-0"
             )}
           >
-            <Button size="lg" className="bg-dark text-white hover:bg-dark/90">
-              View my work
+            <Button size="lg" className="bg-dark text-white hover:bg-dark/90" asChild>
+              <a href="#projects">View my projects</a>
             </Button>
-            <Button size="lg" variant="outline" className="group">
-              Contact me
-              <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+            <Button size="lg" variant="outline" className="group" asChild>
+              <a href="#contact">
+                Contact me
+                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              </a>
             </Button>
+            
+            <div className="flex gap-4 ml-2">
+              <Button size="icon" variant="ghost" className="rounded-full" asChild>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <Github className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button size="icon" variant="ghost" className="rounded-full" asChild>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
 

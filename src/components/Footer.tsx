@@ -1,8 +1,10 @@
 
 import React from "react";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-white border-t border-border py-12">
       <div className="container mx-auto px-4">
@@ -10,10 +12,10 @@ const Footer = () => {
           {/* Logo & Intro */}
           <div>
             <a href="#home" className="text-lg font-semibold text-dark">
-              portfolio<span className="text-accent">.</span>
+              aadhitya<span className="text-accent">.</span>
             </a>
             <p className="mt-4 text-neutral">
-              Creating thoughtful digital experiences that help brands stand out and connect with their users.
+              Electronics and Communication Engineer passionate about IoT, AI, and creating innovative solutions for real-world problems.
             </p>
           </div>
 
@@ -23,13 +25,21 @@ const Footer = () => {
               Navigation
             </h3>
             <ul className="space-y-2">
-              {["Home", "Projects", "About", "Contact"].map((item) => (
-                <li key={item}>
+              {[
+                { name: "Home", href: "#home" },
+                { name: "Projects", href: "#projects" },
+                { name: "Skills", href: "#skills" },
+                { name: "Experience", href: "#experience" },
+                { name: "Education", href: "#education" },
+                { name: "Certifications", href: "#certifications" },
+                { name: "Contact", href: "#contact" }
+              ].map((item) => (
+                <li key={item.name}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={item.href}
                     className="text-neutral hover:text-accent transition-colors"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -43,32 +53,43 @@ const Footer = () => {
             </h3>
             <div className="flex space-x-4 md:justify-end">
               <a
-                href="#"
+                href="https://github.com/yourusername"
                 className="text-neutral hover:text-accent transition-colors"
                 aria-label="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="#"
-                className="text-neutral hover:text-accent transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
+                href="https://linkedin.com/in/yourusername"
                 className="text-neutral hover:text-accent transition-colors"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:aadhitya@example.com"
+                className="text-neutral hover:text-accent transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+              <a
+                href="tel:+919876543210"
+                className="text-neutral hover:text-accent transition-colors"
+                aria-label="Phone"
+              >
+                <Phone className="h-5 w-5" />
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-neutral">
-          <p>© {new Date().getFullYear()} Your Portfolio. All rights reserved.</p>
+          <p>© {currentYear} Aadhitya. All rights reserved.</p>
         </div>
       </div>
     </footer>
