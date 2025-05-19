@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
@@ -83,11 +84,28 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Enhanced Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fade-in reveal-delay-5 bg-zinc-200">
-          <span className="text-sm text-neutral mb-2 animate-pulse">Scroll</span>
-          <div className="w-0.5 h-16 bg-gradient-to-b from-neutral/50 to-transparent relative">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-accent rounded-full animate-scroll-dot"></div>
+        {/* Creative Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-fade-in reveal-delay-5">
+          <div className="relative flex flex-col items-center">
+            <span className="text-sm text-neutral mb-3 animate-bounce-subtle">Scroll</span>
+            
+            {/* Creative circular scroll indicator */}
+            <div className="relative w-12 h-12">
+              {/* Rotating outer circle */}
+              <div className="absolute w-12 h-12 rounded-full border-2 border-dashed border-coral/30 animate-rotate-slow"></div>
+              
+              {/* Inner circle pulse */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gradient-to-br from-coral to-sand rounded-full opacity-70 animate-scale-pulse"></div>
+              
+              {/* Directional arrow */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+                <ArrowDown className="h-4 w-4 text-white animate-bounce" />
+              </div>
+            </div>
+            
+            {/* Radiating circles */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-coral/20 animate-ping" style={{ animationDuration: '3s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border border-coral/10 animate-ping" style={{ animationDuration: '4s', animationDelay: '0.5s' }}></div>
           </div>
         </div>
       </div>
