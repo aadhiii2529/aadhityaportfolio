@@ -40,7 +40,7 @@ const Hero = () => {
           {/* Main Heading with enhanced animations */}
           <h1 ref={headingRef as React.RefObject<HTMLHeadingElement>} className="text-4xl md:text-6xl lg:text-7xl font-bold text-dark max-w-3xl leading-tight">
             <span className="relative overflow-hidden inline-block mr-2">
-              <span className={cn("inline-block", headingVisible ? "animate-text-reveal" : "opacity-0")}>
+              <span className="text-right">
                 Hey, I'm
               </span>
             </span>
