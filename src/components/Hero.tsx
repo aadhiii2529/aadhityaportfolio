@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
@@ -104,8 +103,13 @@ const Hero = () => {
             </div>
             
             {/* Radiating circles */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-coral/20 animate-ping" style={{ animationDuration: '3s' }}></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border border-coral/10 animate-ping" style={{ animationDuration: '4s', animationDelay: '0.5s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-coral/20 animate-ping" style={{
+            animationDuration: '3s'
+          }}></div>
+            <div style={{
+            animationDuration: '4s',
+            animationDelay: '0.5s'
+          }} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 border border-coral/10 animate-ping rounded bg-transparent mx-0 py-[24px]"></div>
           </div>
         </div>
       </div>
