@@ -70,7 +70,7 @@ const Hero = () => {
             
             <div className="flex gap-4 ml-2">
               <Button size="icon" variant="ghost" className="rounded-full hover:scale-110 transition-all duration-300 hover:bg-dark/5" asChild>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="https://github.com/aadhiii2529">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
