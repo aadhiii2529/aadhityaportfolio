@@ -80,6 +80,10 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			transitionDuration: {
+				'1500': '1500ms',
+				'2000': '2000ms',
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -142,7 +146,51 @@ export default {
 					'100%': {
 						transform: 'rotate(360deg)'
 					}
-				}
+				},
+                'float': {
+                    '0%, 100%': {
+                        transform: 'translateY(0)'
+                    },
+                    '50%': {
+                        transform: 'translateY(-20px)'
+                    }
+                },
+                'float-reverse': {
+                    '0%, 100%': {
+                        transform: 'translateY(0)'
+                    },
+                    '50%': {
+                        transform: 'translateY(20px)'
+                    }
+                },
+                'scale-pulse': {
+                    '0%, 100%': {
+                        transform: 'scale(1)'
+                    },
+                    '50%': {
+                        transform: 'scale(1.05)'
+                    }
+                },
+                'scroll-dot': {
+                    '0%, 100%': {
+                        transform: 'translateY(0) translateX(-50%)',
+                        opacity: '0.5'
+                    },
+                    '50%': {
+                        transform: 'translateY(30px) translateX(-50%)',
+                        opacity: '1'
+                    }
+                },
+                'fade-in-up': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(20px)'
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)'
+                    }
+                },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -151,7 +199,12 @@ export default {
 				'fade-out': 'fade-out 0.5s ease-out forwards',
 				'text-reveal': 'text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
 				'bounce-subtle': 'bounce-subtle 2s infinite ease-in-out',
-				'rotate-slow': 'rotate-slow 12s linear infinite'
+				'rotate-slow': 'rotate-slow 12s linear infinite',
+                'float': 'float 6s ease-in-out infinite',
+                'float-reverse': 'float-reverse 7s ease-in-out infinite',
+                'scale-pulse': 'scale-pulse 3s ease-in-out infinite',
+                'scroll-dot': 'scroll-dot 2s ease-in-out infinite',
+                'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
 			}
 		}
 	},
