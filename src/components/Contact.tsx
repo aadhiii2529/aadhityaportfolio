@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
@@ -7,44 +6,44 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, User, Send, MapPin } from "lucide-react";
 import { toast } from "sonner";
-
 const Contact = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const {
+    ref,
+    isVisible
+  } = useScrollAnimation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulating form submission
     setTimeout(() => {
       setIsSubmitting(false);
       toast.success("Message sent! I'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
     }, 1000);
   };
-
-  return (
-    <section id="contact" className="py-24 px-4 bg-cream">
-      <div 
-        ref={ref as React.RefObject<HTMLDivElement>}
-        className={cn(
-          "container mx-auto max-w-4xl transition-all duration-700",
-          isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
-        )}
-      >
+  return <section id="contact" className="py-24 px-4 bg-cream">
+      <div ref={ref as React.RefObject<HTMLDivElement>} className={cn("container mx-auto max-w-4xl transition-all duration-700", isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10")}>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-neutral max-w-lg mx-auto">
@@ -62,15 +61,7 @@ const Contact = () => {
                 </label>
                 <div className="relative">
                   <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral" />
-                  <Input 
-                    id="name" 
-                    name="name"
-                    placeholder="Your name" 
-                    className="pl-10 border-sand focus:border-coral focus:ring-coral" 
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
+                  <Input id="name" name="name" placeholder="Your name" className="pl-10 border-sand focus:border-coral focus:ring-coral" value={formData.name} onChange={handleChange} required />
                 </div>
               </div>
               
@@ -80,16 +71,7 @@ const Contact = () => {
                 </label>
                 <div className="relative">
                   <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-neutral" />
-                  <Input 
-                    id="email" 
-                    name="email"
-                    type="email" 
-                    placeholder="Your email" 
-                    className="pl-10 border-sand focus:border-coral focus:ring-coral" 
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
+                  <Input id="email" name="email" type="email" placeholder="Your email" className="pl-10 border-sand focus:border-coral focus:ring-coral" value={formData.email} onChange={handleChange} required />
                 </div>
               </div>
               
@@ -97,30 +79,14 @@ const Contact = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-dark mb-1">
                   Message
                 </label>
-                <Textarea 
-                  id="message" 
-                  name="message"
-                  placeholder="Your message" 
-                  className="min-h-[120px] border-sand focus:border-coral focus:ring-coral" 
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                />
+                <Textarea id="message" name="message" placeholder="Your message" className="min-h-[120px] border-sand focus:border-coral focus:ring-coral" value={formData.message} onChange={handleChange} required />
               </div>
               
-              <Button 
-                type="submit" 
-                className="w-full bg-coral text-white hover:bg-coral/90"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>Processing...</>
-                ) : (
-                  <>
+              <Button type="submit" className="w-full bg-coral text-white hover:bg-coral/90" disabled={isSubmitting}>
+                {isSubmitting ? <>Processing...</> : <>
                     Send Message
                     <Send className="ml-2 h-4 w-4" />
-                  </>
-                )}
+                  </>}
               </Button>
             </form>
           </div>
@@ -141,7 +107,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-neutral">Email</p>
-                  <p className="font-medium">aadhitya@example.com</p>
+                  <p className="font-medium">aadhitya.m15@gmail.com</p>
                 </div>
               </div>
               
@@ -151,7 +117,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-neutral">Phone</p>
-                  <p className="font-medium">+91 98765 43210</p>
+                  <p className="font-medium">+91 6382643143</p>
                 </div>
               </div>
               
@@ -168,8 +134,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
